@@ -3276,7 +3276,7 @@ void rePaint(int max_fps)
  	 }*/
 
  	if(STRETCH) stretch_blit(VSCR,screen,0,0,G_RESX,G_RESY,0,0,SCREENX,SCREENY);
- 	else blit(VSCR,screen,0,0,(SCREENX-G_RESX)/2,(SCREENY-G_RESY)/2,SCREENX,SCREENY);
+ 	else blit(VSCR,screen,0,0,(SCREENX-G_RESX)/2,(SCREENY-G_RESY)/2,G_RESX,G_RESY);
  	if(VSYNC) vsync();
  	if(AR_Clock()>=MS+MSEC_TO_TIMER(1)) { MS=AR_Clock(); fps=FPS; FPS=0; } FPS++;
  	diff=(MSEC_TO_TIMER(1)/max_fps)-(AR_Clock()-OMS); if(diff>0) wait(diff);
