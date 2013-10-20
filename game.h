@@ -150,13 +150,13 @@ void init()
        gfx_mode=gfx_mode_list->mode[compteur++];
       }
      while(!(SCREENX<=gfx_mode.width && SCREENY<=gfx_mode.height) && gfx_mode.width!=0);
-     if(set_gfx_mode(GFX_QUARTZ_FULLSCREEN,gfx_mode.width,gfx_mode.height,0,0)==-1) { writeConf(3,0,false,false,false,KEY_LEFT,KEY_RIGHT,KEY_UP,KEY_DOWN,KEY_ALT,KEY_LCONTROL,128,200); exit(0); }
+     if(set_gfx_mode(GFX_QUARTZ_FULLSCREEN,gfx_mode.width,gfx_mode.height,0,0)==-1) { writeConf(1,0,true,true,false,KEY_LEFT,KEY_RIGHT,KEY_UP,KEY_DOWN,KEY_ALT,KEY_LCONTROL,128,200); exit(0); }
     }
-   else { if(set_gfx_mode(GFX_AUTODETECT_WINDOWED,SCREENX,SCREENY,0,0)==-1) { writeConf(3,0,false,false,false,KEY_LEFT,KEY_RIGHT,KEY_UP,KEY_DOWN,KEY_ALT,KEY_LCONTROL,128,200); exit(0); } }
+   else { if(set_gfx_mode(GFX_AUTODETECT_WINDOWED,SCREENX,SCREENY,0,0)==-1) { writeConf(1,0,true,true,false,KEY_LEFT,KEY_RIGHT,KEY_UP,KEY_DOWN,KEY_ALT,KEY_LCONTROL,128,200); exit(0); } }
   #else
    // Original source code
-   if(FSCREEN) { if(set_gfx_mode(GFX_AUTODETECT_FULLSCREEN,SCREENX,SCREENY,0,0) == -1) { writeConf(3,0,false,false,false,KEY_LEFT,KEY_RIGHT,KEY_UP,KEY_DOWN,KEY_ALT,KEY_LCONTROL,128,200); exit(0); } }
-   else        { if(set_gfx_mode(GFX_AUTODETECT_WINDOWED,SCREENX,SCREENY,0,0)   == -1) { writeConf(3,0,false,false,false,KEY_LEFT,KEY_RIGHT,KEY_UP,KEY_DOWN,KEY_ALT,KEY_LCONTROL,128,200); exit(0); } }
+   if(FSCREEN) { if(set_gfx_mode(GFX_AUTODETECT_FULLSCREEN,SCREENX,SCREENY,0,0) == -1) { writeConf(1,0,true,true,false,KEY_LEFT,KEY_RIGHT,KEY_UP,KEY_DOWN,KEY_ALT,KEY_LCONTROL,128,200); exit(0); } }
+   else        { if(set_gfx_mode(GFX_AUTODETECT_WINDOWED,SCREENX,SCREENY,0,0)   == -1) { writeConf(1,0,true,true,false,KEY_LEFT,KEY_RIGHT,KEY_UP,KEY_DOWN,KEY_ALT,KEY_LCONTROL,128,200); exit(0); } }
   #endif
 
   LOCK_FUNCTION(count);
@@ -170,10 +170,10 @@ void initEnv()
  {
   MFPS = 60;
   G_RESX = 384; G_RESY = 224;
-  SCREENRES = 3;
+  SCREENRES = 1;
   SCANLINES = 0;
-  FSCREEN   = false;
-  STRETCH   = false;
+  FSCREEN   = true;
+  STRETCH   = true;
   DEBUG     = false;
   KEYLEFT  = KEY_LEFT;
   KEYRIGHT = KEY_RIGHT;
