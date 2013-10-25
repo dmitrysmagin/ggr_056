@@ -116,9 +116,11 @@ void osd::animOSD()
 
 void osd::drawOSD(int sx,int sy)
  {
+  extern int SCREENX, G_RESX;
+  extern bool STRETCH;
   //pivot_sprite(rend,car,rend_x,rend_y,piv_cx,piv_cy,itofix(ang1));
   timeOSD();
-  X=0; Y=0; alpha=180;
+  X=(!STRETCH && SCREENX < G_RESX ? (G_RESX-SCREENX) / 2 : 0); Y=0; alpha=180;
   drawing_mode(DRAW_MODE_TRANS,out,0,0);
   set_trans_blender(0,0,0,alpha);
  	 	
