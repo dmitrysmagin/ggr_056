@@ -34,6 +34,11 @@
 #define N_BBOX 12
 #define N_BVASE 8
 
+#ifdef linux
+#undef CFGFILE
+char CFGFILE[256] = "./config.cfg";
+#endif
+
 bool L_B=1,L_0=1,L_1=1,L_S=1,L_H=1,L_OSD=1,DBUG=0,VSYNC=1;
 int MS=0,OMS=0,FPS=0,fps=0;
 int SCREENRES,SCANLINES,SCREENX,SCREENY,SCREEND,G_RESX,G_RESY,MFPS;
@@ -168,6 +173,16 @@ void init()
 
 void initEnv()
  {
+#ifdef linux
+  char *home = getenv("HOME");
+  if (home)
+    {
+     strcpy(CFGFILE, home);
+     strcat(CFGFILE, "/.ggr");
+     mkdir(CFGFILE, 0777);
+     strcat(CFGFILE, "/config.cfg");
+    }
+#endif
   MFPS = 60;
   G_RESX = 384; G_RESY = 224;
   SCREENRES = 1;
