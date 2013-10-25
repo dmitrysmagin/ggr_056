@@ -1662,6 +1662,8 @@ void writeConf(int screenres, int scanlines, bool fscreen, bool stretch, bool de
   FILE *fd;
 
   fd=fopen(CFGFILE,"w");
+  if (fd)
+  {
   // Write video options
   fprintf(fd,"[screenres]\n%d"  ,screenres);
   fprintf(fd,"\n[scanlines]\n%d",scanlines);
@@ -1680,6 +1682,7 @@ void writeConf(int screenres, int scanlines, bool fscreen, bool stretch, bool de
   fprintf(fd,"\n[music_volume]\n%d",music_volume);
   fprintf(fd,"\n[sound_fx_volume]\n%d",sound_volume);
   fclose(fd);
+  }
  }
 
 void checkGame()
