@@ -1,7 +1,8 @@
 #!/bin/sh
 
 mipsel-linux-g++ game.cpp -o game.dge \
-	-O2 -mips32 \
+	-std=gnu++98 \
+	-g -O2 -mips32 \
 	-Wno-write-strings \
 	`allegro-config --libs`
 
