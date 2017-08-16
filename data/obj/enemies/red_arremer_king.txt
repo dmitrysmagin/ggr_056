@@ -1,0 +1,4 @@
+1  ;rows
+15 ;columns
+76 ;width
+46 ;height
