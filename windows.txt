@@ -1,0 +1,8 @@
+
+Compile Ghouls'n Ghosts Remix under Windows:
+
+- To compile Ghouls'n Ghosts Remix under Windows you need to install the last version of MinGW
+  for Windows.
+  You need also to instal the Allegro 4.2 graphics library for windows.
+
+- After you can use the file "cc.bat" to compile the game (under msdos shell).

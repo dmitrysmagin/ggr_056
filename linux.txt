@@ -1,0 +1,9 @@
+
+Compile Ghouls'n Ghosts Remix under Linux:
+
+- To compile Ghouls'n Ghosts Remix under Linux you need to install first
+  the Allegro 4.2 graphics library.
+
+- After you can use the file "ccl" to compile the game (first make the file "ccl" executable
+  with "chmod ugo+x ccl"). For some configurations of allegro library you must be root
+  to compile the game.

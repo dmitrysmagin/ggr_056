@@ -1,0 +1,9 @@
+
+Compile Ghouls'n Ghosts Remix under MacOS X:
+
+- To compile Ghouls'n Ghosts Remix under MacOS X you need to install first
+  the Allegro 4.2 graphics library.
+
+- After you can use the file "ccm" to compile the game (first make the file "ccm" executable
+  with "chmod ugo+x ccm"). For some configurations of allegro library you must be root
+  to compile the game.
